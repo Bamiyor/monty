@@ -54,5 +54,15 @@ typedef struct bus_s
 extern bus_t bus;
 
 void pchar(stack_t **head, unsigned int counter);
+void f_pall(stack_t **head);
+void f_push(stack_t **head, unsigned int counter);
+void f_swap(stack_t **head, unsigned int counter);
+void f_pop(stack_t **head, unsigned int counter);
+void f_pint(stack_t **head, unsigned int counter);
+void f_nop(stack_t **head, unsigned int counter);
+void f_mul(stack_t **head, unsigned int counter);
+void f_mod(stack_t **head, unsigned int counter);
+void f_div(stack_t **head, unsigned int counter);
+void f_add(stack_t **head, unsigned int counter);
 
 #endif
