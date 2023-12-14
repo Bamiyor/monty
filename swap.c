@@ -9,20 +9,21 @@
 
 void f_swap(stack_t **head, unsigned int counter)
 {
+	stack_t *h;
 	int len = 0, aux;
 
-	while (head)
+	h = *head;
+	while (h)
 {
-	head = head->next;
+	h = h->next;
 	len++;
 }
 if (len < 2)
 {
 	fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
 }
-{
-stack_t *top = *head;
-int temp = top->n;
-top->n = top->next->n;
-top->next->n = temp;
+h = *head;
+aux = h->n;
+h->n = h->next->n;
+h->next->n = aux;
 }
