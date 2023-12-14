@@ -1,5 +1,7 @@
 #include "monty.h"
 
+#define MAX_LINE_LENGTH 100
+
 /**
 * main - monty code interpreter
 * @argc: number of arguments
@@ -8,9 +10,8 @@
 */
 int main(int argc, char *argv[])
 {
-	char *line_content;
+	char line[MAX_LINE_LENGTH];
 	FILE *file;
-	size_t size = 0;
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
@@ -29,15 +30,9 @@ int main(int argc, char *argv[])
 	}
 	while (read_line > 0)
 	{
-		line_content = NULL;
-		read_line = getline(&line_content, &size, file);
-		bus.content = line_content;
+		printf("Read line: %s", line);
+
 		counter++;
-		if (read_line > 0)
-		{
-			execute(line_content, &stack, counter, file);
-		}
-		free(line_content);
 	}
 	free_stack(stack);
 	fclose(file);
